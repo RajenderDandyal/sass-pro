@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+@import "mixin";
+
+#main-nav {
+  background: $deepBlue;
+  ul {
+    //width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    //float: left;
+    display: inline-block;
+    padding: $unit*2;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+    padding: $unit*2;
+    color: $offWhite;
+    &:hover{ // applying pseudo-classes
+      background-color: $offWhite;
+      color: $deepBlue;
+      border-radius: 3px;
+    }
+  }
+}
+// clear-fix
+/*
+#main-nav ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}*/
+
+.lead-banner{
+  @include banner;// applying mixin
+}
+.lessons-banner{
+  @include banner;
+  .banner-content{
+    left:5%;
+  }
+  li{
+    color:$offWhite;
+    padding: $unit*3;
+    text-transform: uppercase;
+  }
+}
