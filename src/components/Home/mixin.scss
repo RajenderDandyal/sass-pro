@@ -23,3 +23,51 @@
     font-size: $Heading;
   }
 }
+// clearFix technique can be applied to any element with float left
+@mixin clearFix{
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+@mixin grid($cols, $mgn){
+  float: left;
+  width: ((100% - (($cols) * $mgn)) / $cols );
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  &:nth-child(#{$cols}n){
+    margin-right: 0;
+  }
+}
+
+/// First example of media query
+@mixin mQSM(){
+  @media screen and (min-width: 0) and (max-width: 600px){
+   @content
+  }
+}
+@mixin mQMD(){
+  @media screen and (min-width: 601px) and (max-width: 900px){
+   @content
+  }
+}
+@mixin mQLG(){
+  @media screen and (min-width: 901px)  {
+   @content
+  }
+}
+
+/// Second example of media query
+@mixin mQ($args...){
+  @if length($args) == 1{
+    @media screen and (max-width: nth($args, 1)){
+      @content;
+    }
+  }
+  @if length($args) == 2{
+    @media screen and (min-width: nth($args, 1)) and (max-width: nth($args, 2)){
+      @content;
+    }
+  }
+}

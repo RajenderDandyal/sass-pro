@@ -12,38 +12,107 @@
     //float: left;
     display: inline-block;
     padding: $unit*2;
+    width: (100%/6);
+    text-align: center;
   }
   a {
     text-decoration: none;
     display: block;
     padding: $unit*2;
     color: $offWhite;
-    &:hover{ // applying pseudo-classes
+    &:hover { // applying pseudo-classes
       background-color: $offWhite;
       color: $deepBlue;
       border-radius: 3px;
     }
   }
 }
-// clear-fix
-/*
-#main-nav ul:after {
-  content: '';
-  display: block;
-  clear: both;
-}*/
 
-.lead-banner{
-  @include banner;// applying mixin
+.lead-banner {
+  @include banner; // applying mixin
 }
-.lessons-banner{
+
+.lessons-banner {
   @include banner;
-  .banner-content{
-    left:5%;
+  .banner-content {
+    top:30%;
+    left: 3%;
   }
-  li{
-    color:$offWhite;
+  li {
+    color: $offWhite;
     padding: $unit*3;
     text-transform: uppercase;
+  }
+}
+
+#services {
+  padding:20px 0;
+  @include mQ(500px){
+    background-color: $offWhite;
+  }
+  @include mQ(501px,800px){
+    background-color: $deepBlue;
+  }
+  @include mQ(801px,1200px){
+    background-color: $offWhite;
+  }
+  h1 {
+    padding: $unit*2;
+    font-size: $subHeading;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  li {
+    float: left;
+    width: (100%/3);
+
+    a {
+      text-decoration: none;
+      color: $deepBlue;
+      display: block;
+      text-align: center;
+      width:60%;
+      margin:auto;
+      &:hover {
+        color: aqua;
+      }
+    }
+    img {
+      display: block;
+      width:60%;
+      margin:auto;
+    }
+  }
+  ul {
+    @include clearFix
+  }
+}
+#projects{
+  background-color: $offWhite;
+  padding:20px 0;
+  h1 {
+    padding: $unit*2;
+    font-size: $subHeading;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  li{
+   @include mQSM{
+     @include grid(1, 2%)
+   }
+    @include mQMD{
+      @include grid(2, 2%)
+    }
+    @include mQLG{
+      @include grid(4, 2%)
+    }
+    img{
+      width: 100%;
+    }
+  }
+  ul{
+    @include clearFix
   }
 }

@@ -31,7 +31,7 @@ class Home extends Component {
           <section id="services">
             <div className="wrapper">
               <h1>Services</h1>
-              <p></p>
+
               <ul>
                 <li>
                   <img src="/images/icon-1.png"/>
