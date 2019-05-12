@@ -1,10 +1,25 @@
 /*eslint-disable*/
 import React, {Component} from 'react';
 import "./home.scss"
+
 class Home extends Component {
+  componentDidMount() {
+    /*let el = document.getElementsByClassName('jsAnimate')[0];
+    let left = 250;
+    let animate = () => {
+      left = left + 2;
+      el.style.left = `${left}px`;
+      console.log(getComputedStyle(el).left)
+    }
+    let aniFrame = setInterval(animate, 20)
+    setTimeout(() => {
+      clearInterval(aniFrame)
+    }, 5000)*/
+  }
+
   render() {
     return (
-        <div style={{position:'relative'}}>
+        <div>
 
           <header>
             <nav id="main-nav">
@@ -18,7 +33,10 @@ class Home extends Component {
                   <li><a href="#">Contact</a></li>
                 </ul>
               </div>
+
             </nav>
+            {/*<div className={"jsAnimate"}></div>*/}
+
             <div className="lead-banner">
               <img src="/images/banner-1.png"/>
               <div className="banner-content">

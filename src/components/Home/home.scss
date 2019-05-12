@@ -56,6 +56,15 @@
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
+.jsAnimate{
+  z-index: 1000;
+  width:25px;
+  height:25px;
+  background-color: yellow;
+  position: relative;
+  top:200px;
+  left:250px;
+}
 
 #main-nav {
   background: $deepBlue;
