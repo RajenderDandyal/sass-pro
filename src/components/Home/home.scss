@@ -1,5 +1,61 @@
 @import "../../styles/variables";
 @import "mixin";
+@keyframes random {
+  0%{
+    width:10px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: aqua;
+  }
+  0%{
+    width:20px;
+    height: 20px;
+    background-color: greenyellow;
+    transform: translate(50px,-10px);
+  }
+  20%{
+    width:20px;
+    height: 20px;
+    background-color: red;
+    transform: translate(-50px,-10px);
+  }
+  40%{
+    width:30px;
+    height: 30px;
+    background-color: cornflowerblue;
+    transform: translate(50px,10px);
+  }
+  60%{
+    width:40px;
+    height: 40px;
+    background-color: brown;
+    transform: translate(-50px,10px);
+  }
+  80%{
+    width:30px;
+    height: 30px;
+    background-color: yellow;
+    transform: translate(+50px,20px);
+  }
+  100%{
+    width:10px;
+    height: 10px;
+    background-color: aqua;
+    position: absolute;
+    top:200px;
+    left: 200px;
+  }
+}
+#animate{
+  width:10px;
+  z-index: 1000;
+  height: 10px;
+  border-radius: 20px;
+  background-color: aqua;
+  animation-name: random;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
 
 #main-nav {
   background: $deepBlue;

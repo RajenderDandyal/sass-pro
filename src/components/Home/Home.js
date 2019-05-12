@@ -4,7 +4,8 @@ import "./home.scss"
 class Home extends Component {
   render() {
     return (
-        <div>
+        <div style={{position:'relative'}}>
+
           <header>
             <nav id="main-nav">
               <div className="wrapper">
@@ -81,6 +82,7 @@ class Home extends Component {
               </ul>
             </div>
           </section>
+          <div id={'animate'}></div>
         </div>
     );
   }
